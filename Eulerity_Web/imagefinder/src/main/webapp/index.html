@@ -1,0 +1,134 @@
+<html>
+<head>
+<style>
+
+body{
+	text-align:center;
+}
+ul {
+  list-style-position: inside;
+  text-align: center;
+}
+</style>
+</head>
+<body style="background-color:rgb(107, 107, 155)">
+
+	<h1>Eulerity Take-Home Challenge WORKING</h1>
+
+	<h2>How it works</h2>
+	<ul>
+		<li>Pressing the submit button on this page will make a POST
+			request to /main</li>
+		<li>That request will contain a form parameter with the url
+			populated in the input box below</li>
+		<li>The ImageFinder servlet will respond to the request with a
+			list of image urls</li>
+		<li>This page contains javascript to send the request and use the
+			response to build a list of images</li>
+	</ul>
+	<h2>Backend Developers</h2>
+	<ul>
+		<li>You can update the ImageFinder servlet to add crawling logic</li>
+		<li>Feel free to add as many classes/packages/files/third party
+			libraries as you'd like</li>
+		<li>We recommend JSoup for parsing web pages</li>
+		<li>You can update this page's html/css/style if you plan on
+			improving the interface</li>
+		<li>Your final submission does not need to contain any of the
+			files included herein</li>
+		<li>This project is just skeleton code so you can hit the ground
+			running.</li>
+		<li>Some ideas:
+			<ul>
+			<li>Crawl not only the given url, but other pages in the same domain</li>
+			<li>Make your crawler multithreaded to speed up response times</li>
+			<li>Be a friendly crawler and try not to hammer a site</li>
+			<li>Think about how to identify different classes of images and do they need special handling</li>
+			<li>Can you identify images as logos? Perhaps collect favicons?</li>
+			<li>Can you mark images that contain people?</li>
+			</ul>
+		</li>
+	</ul>
+	<h2>Important Notes</h2>
+	<p>Congratulations on making it this far into the interview
+		process!</p>
+	<p>
+	This is a free-form hackathon for a very important reason. We wish to see what ideas you can bring to the table.
+	</p>
+	<p><strong>If your submission only contains 5-10 lines of new code, please think twice about submitting it.</strong> If you need more time, you can ask for it.
+	</p>
+	<p>
+	You can use one of the ideas above, but feel free to go off and build something completely different. 
+	The important thing is to submit something that highlights your strengths as a developer.
+	</p>
+	<p>
+	  <b>Remember, this is your chance to show off how you can best contribute to our team.</b>
+	</p>
+	<p>Please remember to think about good design and code style. Comments in your code are great, but thought should also be taken in how to name your variables and method.</p>
+	
+
+
+	<div class="content">
+		<div class="input">
+			
+			<form>
+			
+				Link: <input type="text" name="url">
+			
+			</form>
+
+			<button type="button">
+				<img src="data:image/jpeg;base64,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" />
+			</button>
+		</div>
+		<div class="output">
+			<ul class="results">
+
+			</ul>
+		</div>
+	</div>
+	<script>
+		var resultList = document.querySelector('ul.results');
+		var urlInput = document.querySelector('input[name=url]')
+
+		apiCallBack = function(xhr, callback) {
+			if (xhr.readyState == XMLHttpRequest.DONE) {
+				if (xhr.status != 200) {
+					let message = xhr.status + ":" + xhr.statusText + ":"
+							+ xhr.responseText;
+					alert(message);
+					throw 'API call returned bad code: ' + xhr.status;
+				}
+				let response = xhr.responseText ? JSON.parse(xhr.responseText)
+						: null;
+				if (callback) {
+					callback(response);
+				}
+			}
+		}
+
+		updateList = function(response) {
+			resultList.innerHTML = '';
+			for (var i = 0; i < response.length; i++) {
+				var img = document.createElement("img");
+				img.width = 200;
+				img.src = response[i];
+				resultList.appendChild(img);
+			}
+		}
+
+		makeApiCall = function(url, method, obj, callback) {
+			let xhr = new XMLHttpRequest();
+			xhr.open(method, url);
+			xhr.onreadystatechange = apiCallBack.bind(null, xhr, callback);
+			xhr.send(obj ? obj instanceof FormData || obj.constructor == String ? obj : JSON.stringify(obj) : null);
+		}
+
+		document.querySelector('button').addEventListener("click", function(event) {
+			event.preventDefault();
+			makeApiCall('/main?url=' + urlInput.value, 'POST', null, updateList);
+		});
+	</script>
+</body>
+
+</html>
